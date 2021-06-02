@@ -1,0 +1,65 @@
+#1 Questão
+a = int (input('Digite um número para A: '))
+b = int (input('Digite um número para B: '))
+
+if a > b:
+    print ('o número maior é o de A: {}'.format(a))
+elif b > a:
+    print('o número maior é o de B: {}'.format(b))
+else:
+    print('os números A e B são iguais: {}'.format(a))
+
+#19 Questão
+
+aux1 = 0
+aux2 = 0
+
+while aux2 < 1:
+    pergunta1 = input("Telefonou para a vítima?")
+    if pergunta1 in "Ss":
+        aux1 +=1
+
+    pergunta2 = input("Esteve no local do crime?")
+    if pergunta2 in "Ss":
+        aux1 += 1
+
+    pergunta3 = input("Mora perto da vítima?")
+    if pergunta3 in "Ss":
+        aux1 += 1
+
+    pergunta4 = input("Devia para a vítima?")
+    if pergunta4 in "Ss":
+        aux1 += 1
+
+    pergunta5 = input("Já trabalhou com a vítima?")
+    if pergunta5 in "Ss":
+        aux1 += 1
+
+#Questão 20
+
+numLitros = float(input("numero de litros: "))
+tipoCombustivel = float(input("tipo combustivel - A ou G "))
+
+limiteDescontoLitros = 20
+valorLitroAlcool = 1.9
+valorLitroGasolina = 2.5
+descontoAlcoolInferior = 0.97 # (1 - 0.03)
+descontoAlcoolSuperior = 0.95 # (1 - 0.05)
+
+if tipoCombustivel == "A" or tipoCombustivel == "a":
+    if numLitros <= limiteDescontoLitros:
+        valorPago = (numLitros * valorLitroAlcool) * descontoAlcoolInferior
+    else:
+        valorPago = (numLitros * valorLitroAlcool) * descontoAlcoolSuperior
+
+else:
+    if tipoCombustivel == "G" or tipoCombustivel =='g':
+        if numLitros <= limiteDescontoLitros:
+            valorPago = (numLitros * valorLitroGasolina) * 0.96
+        else:
+            valorPago = (numLitros * valorLitroGasolina) * 0.94
+    else:
+        print("informação inválida")
+        valorPago = 0
+
+print(valorPago)
